@@ -8,7 +8,7 @@ Reads a fastq and finds a list of supplied sequences within a Levenshtein distan
 
 ## Example
 
-We have a list of sequences that we want to find in our fastq 'foo.fastq' within our file named 'sequences.txt'. The contents of sequences.txt are three sequences:
+We have a list of sequences that we want to find in our fastq 'in.fastq.gz' within our file named 'sequences.txt'. The contents of sequences.txt are three sequences separated by a return/newline:
 
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
@@ -16,7 +16,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAGGG
 
 AAAAAAAAAAAAAAAAAAAAAAAAAAACCC
 
-Our command : `d`
+Our output will be out.fastq
+
+Our command : `fastq_levenshtein_automata --fastq=in.fastq.gz --sequence_list=sequences.txt --output=out.fastq`
 
 
 ## Previous Work
