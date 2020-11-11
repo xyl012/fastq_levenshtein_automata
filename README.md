@@ -8,7 +8,7 @@ Reads a fastq and finds a list of supplied sequences within a Levenshtein distan
 
 ## Example
 
-[![asciicast](https://asciinema.org/a/ql4ojfDIaGrhxYWkxHHr9LPWY.svg)](https://asciinema.org/a/ql4ojfDIaGrhxYWkxHHr9LPWY)
+![fqlev](fqlev.gif)
 
 We have a list of sequences that we want to find in our fastq 'in.fastq.gz' within our file named 'sequences.txt'. The contents of sequences.txt are three sequences separated by a return/newline:
 
