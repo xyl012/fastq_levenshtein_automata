@@ -1,10 +1,12 @@
-# Fastq Sequence Filtering with Levenshtein Automata
+# Fastq Sequence Filtering with Levenshtein Automata (fuzzy string match)
 Reads a fastq and finds a list of supplied sequences within a Levenshtein distance via finite state automata. Download a release for your OS and run from the command line without outside dependencies. This repo:
 <ul>
 <li>Uses seq io to stream a fastq efficiently</li>
 <li>Creates a set within levenshtein distance (-d or --distance options) of the list of sequences from a fastq</li>
 <li>Checks for the sequences and returns any fastq lines within distance in our fastq. </li>
 </ul>
+
+[seq_io](https://docs.rs/seq_io/0.3.1/seq_io/)
 
 ## Example
 
