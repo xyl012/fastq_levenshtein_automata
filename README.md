@@ -25,3 +25,8 @@ Our command : `./fastq_levenshtein_automata --fastq=in.fastq.gz --sequence_list=
 
 This tool is simply an implementation of [Automata by burnt sushi](https://blog.burntsushi.net/transducers/)
  to fastqs. There are a lot of implementations to find hamming or levenshtein distance between single strings, but I wanted to find levenshtein distance of a list of sequences in a fastq and make a new fastq in a streaming fashion.
+
+
+## Notes
+
+The sequences in the list compare against the whole sequence in the fastq, e.g. if the sequence of the fastq is 5 A's and your list has 3 A's, it won't find it if your levenshtein distance is 1.
