@@ -8,7 +8,7 @@ Reads a fastq and finds a list of supplied sequences within a Levenshtein distan
 
 ## Example
 
-If you want to follow along with the gif, [watch the asciicast]().
+[![asciicast](https://asciinema.org/a/ql4ojfDIaGrhxYWkxHHr9LPWY.svg)](https://asciinema.org/a/ql4ojfDIaGrhxYWkxHHr9LPWY)
 
 We have a list of sequences that we want to find in our fastq 'in.fastq.gz' within our file named 'sequences.txt'. The contents of sequences.txt are three sequences separated by a return/newline:
 
@@ -18,7 +18,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAACCC <br>
 
 Our output will be out.fastq
 
-Our command : `fastq_levenshtein_automata --fastq=in.fastq.gz --sequence_list=sequences.txt --output=out.fastq`
+Our command : `./fastq_levenshtein_automata --fastq=in.fastq.gz --sequence_list=sequences.txt --output=out.fastq`
 
 
 ## Previous Work
