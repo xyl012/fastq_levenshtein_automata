@@ -12,9 +12,9 @@ If you want to follow along with the gif, [watch the asciicast]().
 
 We have a list of sequences that we want to find in our fastq 'in.fastq.gz' within our file named 'sequences.txt'. The contents of sequences.txt are three sequences separated by a return/newline:
 
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAGGG
-AAAAAAAAAAAAAAAAAAAAAAAAAAACCC
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA <br>
+AAAAAAAAAAAAAAAAAAAAAAAAAAAGGG <br>
+AAAAAAAAAAAAAAAAAAAAAAAAAAACCC <br>
 
 Our output will be out.fastq
 
