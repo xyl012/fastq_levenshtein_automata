@@ -36,6 +36,14 @@ struct Cli {
     )]
         fastq: std::path::PathBuf,
 
+    /// Levenshtein Distance
+    #[structopt(
+        short="l", 
+        long = "--levenshtein",
+        default_value = "1"
+    )]
+    levenshtein: u32,
+
     /// Output file
     #[structopt(short, long, parse(from_os_str))]
     output: PathBuf,
@@ -45,16 +53,15 @@ struct Cli {
 
 fn main() {
 let args = Cli::from_args();
+let dist = args.levenshtein;
 let gz1 = File::open(&args.fastq).expect("Could not open Fastq");
 let bc = File::open(&args.barcode_list).expect("Could not open barcode list");
 let bcr = BufReader::new(&bc);
 let gz1 = GzDecoder::new(gz1);
 let mut reader1 = seq_io::fastq::Reader::new(gz1);
 
-// let mut out = File::with_options().read(true).open(&args.output);
 let out = OpenOptions::new().create(true).write(true).append(true).open(&args.output).expect("Could not create output file");
 let mut seqwriter = BufWriter::new(out);
-
 
 let m_lines: Vec<String> = bcr.lines().map(|x| x.unwrap()).collect();
 let sbc = m_lines.tap(|v| v.sort()); //sort barcodes before insertion into the set
@@ -63,7 +70,7 @@ let set = Set::from_iter(sbc).unwrap();
     while let Some(record1) = reader1.next() {
         let result = record1.expect("Read Error");
         let seq1 = str::from_utf8(&result.seq()).unwrap();
-        let lev1 = Levenshtein::new(seq1, 1).unwrap();
+        let lev1 = Levenshtein::new(seq1, dist).unwrap();
         let stream1 = set.search(lev1).into_stream();
         let keys1 = stream1.into_strs().unwrap();
         if keys1.len() >0 {
