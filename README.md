@@ -10,7 +10,7 @@ Reads a fastq and finds a list of supplied sequences within a Levenshtein distan
 
 ![fqlev](fqlev.gif)
 
-We have a list of sequences that we want to find in our fastq 'in.fastq.gz' within our file named 'sequences.txt'. The contents of sequences.txt are three sequences separated by a return/newline:
+We have a list of sequences that we want to find in our fastq 'in.fastq.gz' within our file named 'bc_4count.txt'. The contents of sequences.txt are three sequences separated by a return/newline:
 
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA <br>
 AAAAAAAAAAAAAAAAAAAAAAAAAAAGGG <br>
@@ -18,7 +18,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAACCC <br>
 
 Our output will be out.fastq
 
-Our command : `./fastq_levenshtein_automata --fastq=in.fastq.gz --sequence_list=sequences.txt --output=out.fastq`
+Our command : `./fastq_levenshtein_automata --fastq=in.fastq.gz --sequence_list=bc_4count.txt --output=out.fastq`
 
 
 ## Previous Work
