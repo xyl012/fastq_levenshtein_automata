@@ -79,3 +79,14 @@ let set = Set::from_iter(sbc).unwrap();
     }
 
 }
+
+trait Tap {
+    fn tap(self, f: impl FnMut(&mut Self)) -> Self;
+}
+
+impl<T> Tap for T {
+    fn tap(mut self, mut f: impl FnMut(&mut Self)) -> Self {
+        f(&mut self);
+        self
+    }
+}
