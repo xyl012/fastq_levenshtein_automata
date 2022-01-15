@@ -6,8 +6,6 @@ Reads a fastq and finds a list of supplied sequences within a Levenshtein distan
 <li>Checks for the sequences and returns any fastq lines within distance in our fastq. </li>
 </ul>
 
-[seq_io](https://docs.rs/seq_io/0.3.1/seq_io/)
-
 ## Example
 
 ![fqlev](fqlev.gif)
